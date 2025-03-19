@@ -921,7 +921,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: "MakingGrownMenWeepfinal.pdf",
+    value: "GCPBC.pdf",
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {

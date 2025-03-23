@@ -733,9 +733,8 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="printContainer"></div>
     <script>
         window.addEventListener('load', function () {
-            const hash = decodeURIComponent(window.location.hash);
-            const params = hash.split(/#|=/);
-            const query = params[params.indexOf("find")+1];
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get("search")?.replace(/['"]/g, "") || "";
             PDFViewerApplication.eventBus.dispatch("find", {
                 query: query,
                 phraseSearch: true,  

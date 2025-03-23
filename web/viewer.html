@@ -37,8 +37,12 @@ See https://github.com/adobe-type-tools/cmap-resources
   </head>
 
   <body tabindex="0">
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get("search")?.replace(/['"]/g, "") || "";
+      console.log(searchQuery);
+    </script>
     <div id="outerContainer">
-
       <div id="sidebarContainer">
         <div id="toolbarSidebar" class="toolbarHorizontalGroup">
           <div id="toolbarSidebarLeft">

@@ -39,9 +39,15 @@ See https://github.com/adobe-type-tools/cmap-resources
 
   <body tabindex="0">
     <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const searchQuery = urlParams.get("search")?.replace(/['"]/g, "") || "";
-      console.log(searchQuery);
+        const hash = window.location.hash;
+        const params = hash.split(/#|=/);
+        const query = params[params.indexOf("find")+1];
+        PDFViewerApplication.eventBus.dispatch("find", {
+            query: query,
+            phraseSearch: true,  
+            caseSensitive: false, 
+            entireWord: false,
+        });
     </script>
     <div id="outerContainer">
       <div id="sidebarContainer">
